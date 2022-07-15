@@ -1,6 +1,6 @@
 name: show_loader_dialog
 description: A new Flutter widget for show and hide loader from android side.
-version: 0.0.1
+version: 0.0.2
 homepage:
 
 environment:

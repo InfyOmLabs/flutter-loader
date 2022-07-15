@@ -2,40 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:show_loader_dialog/show_loader_dialog.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(),
-    );
-  }
+  State<MyApp> createState() => _MyAppState();
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Plugin Example"),
-      ),
-      body: Center(
-        child: ElevatedButton(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: const Text("Flutter Loader Dialog"),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: ElevatedButton(
             onPressed: () {
               CommonDialog.showLoader(true);
               Future.delayed(
@@ -45,7 +38,10 @@ class _HomePageState extends State<HomePage> {
                 },
               );
             },
-            child: const Text("show loader")),
+            style: ElevatedButton.styleFrom(primary: Colors.green),
+            child: const Text("Show Loader Dialog"),
+          ),
+        ),
       ),
     );
   }

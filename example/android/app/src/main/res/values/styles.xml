@@ -15,12 +15,4 @@
     <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">?android:colorBackground</item>
     </style>
-    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:layout_width">100dp</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="colorAccent">#000000</item>
-        <item name="android:textColorPrimary">#000000</item>
-        <item name="android:background">#FFFFFF</item>
-
-    </style>
 </resources>
